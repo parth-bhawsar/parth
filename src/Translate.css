@@ -1,0 +1,133 @@
+/* Global Styling */
+body {
+  background-color: #0b0d10;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative; /* Ensure pseudo-element is positioned properly */
+  overflow: hidden; /* Prevent scrollbars due to the border effect */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 20px; /* Optional rounded corners */
+  background: linear-gradient(45deg, #008cff, #e100ff);
+  z-index: -1;
+}
+
+
+/* Container for Layout */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+/* Input Styling */
+input[type="file"] {
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #161a20;
+  border: 2px solid #2a2e35;
+  color: #f0f0f0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Textarea Styling */
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #161a20;
+  border: 2px solid #2a2e35;
+  color: #f0f0f0;
+  border-radius: 10px;
+  resize: none;
+}
+
+/* Dropdown Select Styling */
+select {
+  width: 48%;
+  margin: 5px 1%;
+  padding: 10px;
+  background-color: #161a20;
+  border: 2px solid #2a2e35;
+  color: #f0f0f0;
+  border-radius: 10px;
+}
+
+/* Gradient Button Styling */
+button {
+  padding: 1em 2em;
+  background-color: #161a20;
+  border: none;
+  color: #f0f0f0;
+  border-radius: 1000px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, transform 0.2s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Gradient Border Effect */
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 107%;
+  width: 102%;
+  border-radius: 1000px;
+  background-image: linear-gradient(to bottom right, #008cff, #e100ff);
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+button:hover {
+  z-index: 0;
+  box-shadow: 0 0 30px #008cff, 0 0 30px #e100ff;
+  transform: scale(1.05);
+}
+
+button:hover::after {
+  transform: scale(1.1);
+}
+
+/* Video and Canvas Styling */
+video, canvas {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: none; /* Initially hidden */
+}
+
+/* Show video when active */
+.video-active {
+  display: block;
+}
+
+/* Loading Text */
+p {
+  margin: 10px 0;
+}
